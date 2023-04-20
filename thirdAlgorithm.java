@@ -54,7 +54,7 @@ class Node {
   Node leftChild;
   Node rightChild;
   
-  int startIndex; // indexes of an array
+  int startIndex; 
   int endIndex;
 
   int value;
@@ -231,7 +231,7 @@ class Rectangle {
 
       for (Rectangle rectangle : rectangles) {
         sides.add(rectangle.new Side(rectangle.leftBottomPoint.x, rectangle.leftBottomPoint.y, rectangle.rightUpperPoint.y, true));
-        sides.add(rectangle.new Side(rectangle.rightUpperPoint.x, rectangle.leftBottomPoint.y, rectangle.rightUpperPoint.y, false));
+        sides.add(rectangle.new Side(rectangle.rightUpperPoint.x + 1, rectangle.leftBottomPoint.y, rectangle.rightUpperPoint.y, false));
       }
 
       Collections.sort(sides, (o1, o2) -> Integer.compare(o1.x, o2.x));
