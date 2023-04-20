@@ -17,18 +17,17 @@ public class secondAlgorithm {
 
   private static void loadNcheckPoints (Scanner scanner) {
     int count = scanner.nextInt();
-    for (int i = 0; i < count;i++) {
+    for (int i = 0; i < count; i++) {
        System.out.print(new Point(scanner.nextInt(), scanner.nextInt()).getNumberOfJunctions() + " ");
     }
     System.out.println();
   }
 
   private static void loadRectangles (Scanner scanner) {
-    Rectangle.NUMBER_OF_RECTANGLES = scanner.nextInt();
 
-    Rectangle.rectangles = new Rectangle[Rectangle.NUMBER_OF_RECTANGLES];
+    Rectangle.rectangles = new Rectangle[scanner.nextInt()];
 
-    for (int i = 0; i < Rectangle.NUMBER_OF_RECTANGLES; i++) {
+    for (int i = 0; i < Rectangle.rectangles.length; i++) {
       Rectangle.rectangles[i] = new Rectangle(scanner.nextInt(), scanner.nextInt(),
           scanner.nextInt(), scanner.nextInt());
 
@@ -112,7 +111,6 @@ class Rectangle {
   static Rectangle[] rectangles;
   Point leftBottomPoint;
   Point rightUpperPoint;
-  static int NUMBER_OF_RECTANGLES = 0;
 
   public static void addUniqueValue (ArrayList<Integer> array, int value) {
     if (!array.contains(value)) {
