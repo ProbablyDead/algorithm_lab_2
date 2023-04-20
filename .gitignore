@@ -3,3 +3,5 @@ algorithm-second-lab.iml
 out
 *.iml
 *.class
+*/.DS_Store
+treePrinter.java
