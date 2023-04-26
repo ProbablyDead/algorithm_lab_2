@@ -1,0 +1,11 @@
+Map results
+Points and rectangles count    Time           Units
+1                              869917         ns.
+2                              1024417        ns.
+4                              1146792        ns.
+8                              1900042        ns.
+16                             3764334        ns.
+32                             20681625       ns.
+64                             291747875      ns.
+128                            4278187500     ns.
+256                            66079630166    ns.
