@@ -1,6 +1,21 @@
+package algorithms.solution;
+
 import java.util.Scanner;
 
-public class firstAlgorithm {
+public class FirstAlgorithm {
+
+  public static long firstAlgorithmMain (Scanner scanner) {
+
+    loadRectangles(scanner);
+
+    long start = System.nanoTime();
+   
+    loadPoints(scanner);
+
+    // System.out.println();
+    scanner.close();
+    return System.nanoTime() - start;
+  }
 
   private static void loadRectangles (Scanner scanner) {
 
@@ -22,18 +37,8 @@ public class firstAlgorithm {
           ++count;    
         }
       }
-      System.out.print(count + " ");
+      // System.out.print(count + " ");
     }
-  }
-
-  public static void main (String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
-    loadRectangles(scanner);
-    loadPoints(scanner);
-
-    System.out.println();
-    scanner.close();
   }
 
 }

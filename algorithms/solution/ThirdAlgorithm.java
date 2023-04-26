@@ -1,17 +1,26 @@
-import java.util.Arrays;
+package algorithms.solution;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class secondAlgorithm {
+public class ThirdAlgorithm {
 
-  public static void main (String args[]) {
-    Scanner scanner = new Scanner(System.in); 
+  public static long thirdAlgorithmMain (Scanner scanner) {
+
+    long start = System.nanoTime();
 
     loadRectangles(scanner);
-    createMap();
-    loadNcheckPoints(scanner);
+    Node root = Node.buildEmptySegmentTree(0, Rectangle.fillToRowerOfTwo(Rectangle.compressedY) - 1);
+    Node.roots.put(-1, root);
 
+    Rectangle.Side.fillSides();
+    Node.updateWithSides(Rectangle.Side.sides);
+
+    loadNcheckPoints(scanner);
     scanner.close();
+
+    return System.nanoTime() - start;
   }
 
   private static int getNumberOfJunctions (Point point) {
@@ -22,15 +31,23 @@ public class secondAlgorithm {
         || (point.y > Rectangle.compressedY.get(Rectangle.compressedY.size() - 1))) {
       return 0;
     }
-    return Rectangle.Map[Point.binarySearch(Rectangle.compressedX, point.x)][Point.binarySearch(Rectangle.compressedY, point.y)];
+
+    int compX = Point.binarySearch(Rectangle.compressedX, point.x);
+    int compY = Point.binarySearch(Rectangle.compressedY, point.y);
+
+    ArrayList<Integer> setOfKeysAsList = new ArrayList<>(Node.roots.keySet());
+    int tree = setOfKeysAsList.get(Point.binarySearch(setOfKeysAsList, compX));
+    return Node.roots.get(tree).getResult(compY, 0);
   }
 
   private static void loadNcheckPoints (Scanner scanner) {
     int count = scanner.nextInt();
-    for (int i = 0; i < count; i++) {
-       System.out.print(getNumberOfJunctions(new Point(scanner.nextInt(), scanner.nextInt())) + " ");
+    for (int i = 0; i < count;i++) {
+       // System.out.print(
+           getNumberOfJunctions(new Point(scanner.nextInt(), scanner.nextInt()));
+           // + " ");
     }
-    System.out.println();
+    // System.out.println();
   }
 
   private static void loadRectangles (Scanner scanner) {
@@ -53,24 +70,6 @@ public class secondAlgorithm {
     Collections.sort(Rectangle.compressedX);
     Collections.sort(Rectangle.compressedY);
   }
-
-  private static void createMap () {
-    Rectangle.Map = new int[Rectangle.compressedX.size()][Rectangle.compressedY.size()];
-
-    for (int[] row : Rectangle.Map) {
-      Arrays.fill(row, 0);
-    }
-
-    for (Rectangle rectangle : Rectangle.rectangles) {
-      for (int i = Rectangle.compressedX.indexOf(rectangle.leftBottomPoint.x); 
-          i <= Rectangle.compressedX.indexOf(rectangle.rightUpperPoint.x); i++) {
-        for (int j = Rectangle.compressedY.indexOf(rectangle.leftBottomPoint.y); 
-            j <= Rectangle.compressedY.indexOf(rectangle.rightUpperPoint.y); j++) {
-          Rectangle.Map[i][j]++;
-        }
-      }
-    }
-
-  }
-
 }
+
+

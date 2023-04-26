@@ -236,7 +236,7 @@ class Rectangle {
 
       Collections.sort(sides, (o1, o2) -> Integer.compare(o1.x, o2.x));
     }
-
   }
+
 }
 
