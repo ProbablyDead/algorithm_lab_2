@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javafx.util.Pair;
+
 public class ThirdAlgorithm {
 
-  public static long thirdAlgorithmMain (Scanner scanner) {
+  public static Pair<Long, Long> thirdAlgorithmMain (Scanner scanner) {
 
     long start = System.nanoTime();
 
@@ -17,10 +19,12 @@ public class ThirdAlgorithm {
     Rectangle.Side.fillSides();
     Node.updateWithSides(Rectangle.Side.sides);
 
+    long finishedCreating = System.nanoTime() - start;
+
     loadNcheckPoints(scanner);
     scanner.close();
 
-    return System.nanoTime() - start;
+    return new Pair<Long, Long>(finishedCreating, System.nanoTime() - start);
   }
 
   private static int getNumberOfJunctions (Point point) {

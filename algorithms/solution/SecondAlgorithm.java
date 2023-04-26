@@ -4,19 +4,22 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
+import javafx.util.Pair;
+
 public class SecondAlgorithm {
 
-  public static long secondAlgorithmMain (Scanner scanner) {
+  public static Pair<Long, Long> secondAlgorithmMain (Scanner scanner) {
 
     long start = System.nanoTime();
 
     loadRectangles(scanner);
     createMap();
+    long finishedCreating = System.nanoTime() - start;
     loadNcheckPoints(scanner);
 
     scanner.close();
 
-    return System.nanoTime() - start;
+    return new Pair<Long, Long>(finishedCreating, System.nanoTime() - start);
   }
 
   private static int getNumberOfJunctions (Point point) {

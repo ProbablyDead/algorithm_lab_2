@@ -2,9 +2,11 @@ package algorithms.solution;
 
 import java.util.Scanner;
 
+import javafx.util.Pair;
+
 public class FirstAlgorithm {
 
-  public static long firstAlgorithmMain (Scanner scanner) {
+  public static Pair<Long, Long> firstAlgorithmMain (Scanner scanner) {
 
     loadRectangles(scanner);
 
@@ -14,7 +16,7 @@ public class FirstAlgorithm {
 
     // System.out.println();
     scanner.close();
-    return System.nanoTime() - start;
+    return new Pair<Long,Long>((long)0, System.nanoTime() - start);
   }
 
   private static void loadRectangles (Scanner scanner) {
