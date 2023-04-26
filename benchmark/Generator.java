@@ -1,4 +1,4 @@
-package algorithms.benchmark;
+package benchmark;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package algorithms.benchmark;
+package benchmark;
 
 public class ProgressBar {
   private static final String ANSI_RESET = "\u001B[0m";
@@ -10,6 +10,10 @@ public class ProgressBar {
   private static final String ANSI_PURPLE = "\u001B[35m";
   private static final String ANSI_CYAN = "\u001B[36m";
   private static final String ANSI_WHITE = "\u001B[37m";
+
+  ProgressBar () {
+    System.out.println();
+  }
 
   public String progressBarString (int curretNum, int maxNumber) {
     final int persent = (int) ((double) curretNum / (double) maxNumber * 100);
