@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 public class FileWriter {
 
   private PrintWriter printWriter;
-  private static final String parameters = String.format("%-30s %-10s %-10s", "Points and rectangles count", "Time", "Units");
+  private static final String parameters = String.format("%-30s %-14s %s", "Points and rectangles count", "Time", "Units");
 
   FileWriter (String path) {
     try {
@@ -25,7 +25,7 @@ public class FileWriter {
   }
 
   public void write (int currentNum, long data) {
-    printWriter.printf("%-30d %-10d %-10s.\n", currentNum, data, "ns."); 
+    printWriter.printf("%-30d %-14d %s\n", currentNum, data, "ns."); 
   }
 
   public void write (String string) {

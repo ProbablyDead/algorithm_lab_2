@@ -5,3 +5,4 @@ out
 *.class
 */.DS_Store
 treePrinter.java
+.DS_Store
