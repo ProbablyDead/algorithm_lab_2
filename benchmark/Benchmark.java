@@ -7,10 +7,10 @@ import algorithms.solution.SecondAlgorithm;
 import algorithms.solution.ThirdAlgorithm;
 
 public class Benchmark {
-  private static final int maxNumber = 10;
+  private static final int maxNumber = 150000;
   private static final int maxNumberForMap = 500;
   private static final int startI = 1;
-  private static final int step = 5;
+  private static final int step = 2;
 
   public static void main (String[] args) {
     Generator generator = new Generator();
