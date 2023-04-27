@@ -35,27 +35,26 @@
 
   Перебор каждого прямоугольника и определение принадлежности к нему точки
 
- **Сложность:** подготовка - O(1), поиск - O(N)
+ **Сложность:** подготовка - `O(1)`, поиск - `O(N)`
 
 https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/FirstAlgorithm.java#L37-L46
 
   > Определение принадлежности
-  https://github.com/ProbablyDead/algorithm_lab_2/blob/d97afbfb6c46e2c8002b4b9d70ea0a808f26886c/algorithms/solution/Rectangle.java#L29-L31
+  > 
+  > https://github.com/ProbablyDead/algorithm_lab_2/blob/d97afbfb6c46e2c8002b4b9d70ea0a808f26886c/algorithms/solution/Rectangle.java#L29-L31
 
 ### Алгоритм на карте
  
   Построение карты по сжатым координатам и поиск таковых в массиве с помощью бинарного поиска
 
-  **Сложность:** подготовка - O(N^3), поиск - O(log(N))
+  **Сложность:** подготовка - `O(N^3)`, поиск - `O(log(N))`
 
-  - Создание отсортированного массива уникальных сжатых координат
-
-    https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/SecondAlgorithm.java#L47-L66
+  - Создание отсортированного [массива](#создание-отсортированного-массива-уникальных-сжатых-координат) уникальных сжатых координат 
 
     > Добавление уникального значения
     > https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/Rectangle.java#L18-L22
 
-    > Добавление координаты `(x2 + 1, y2 + 1)` нужно для того, чтобы включить правую и верхнюю границы в поиск 
+    > Добавление координаты `(x2 + 1, y2 + 1)` нужно для возможности поиска сжатой координаты бинарным поиском со смещением влево
 
   - Создание карты
 
@@ -65,13 +64,46 @@ https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16
 
     https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/SecondAlgorithm.java#L26-L35
 
-    > Бинарный поиск (используется в следующем алгоритме)
-    > https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/Point.java#L14-L29
+  - [Бинарный поиск](#бинарный-поиск)
 
 ### Алгоритм на дереве
 
+  Построение персистентного дерева отрезков и последующий поиск значения в массиве деревьев по сжатым координатам точки 
+  
+  **Сложность:** подготовка - `O(Nlog(N))`, поиск - `O(log(N))`
+  
+  - Создание отсортированного [массива](#создание-отсортированного-массива-уникальных-сжатых-координат) уникальных сжатых координат 
 
-### Замеры и итоговые результаты
+  - Построение пустого дерева отрезков 
+
+    https://github.com/ProbablyDead/algorithm_lab_2/blob/5cb0855981afb0245c61ca32746066fd3d78f35f/algorithms/solution/Node.java#L71-L84
+
+  - Создание отсортированного массива с вертикальными сторонами прямоугольников
+
+    https://github.com/ProbablyDead/algorithm_lab_2/blob/5cb0855981afb0245c61ca32746066fd3d78f35f/algorithms/solution/Rectangle.java#L47-L55
+
+    > Класс стороны
+    > https://github.com/ProbablyDead/algorithm_lab_2/blob/5cb0855981afb0245c61ca32746066fd3d78f35f/algorithms/solution/Rectangle.java#L33-L45
+
+    *Таким образом*, мы упорядочиваем стороны всех заданных прямоугольников, что позволяет последовательно добавлять их в дерево отрезков
+
+  - Добавление сторон в дерево отрезков
+
+    https://github.com/ProbablyDead/algorithm_lab_2/blob/5cb0855981afb0245c61ca32746066fd3d78f35f/algorithms/solution/Node.java#L35-L69 
+
+  - Поиск количества пересечений
+
+    https://github.com/ProbablyDead/algorithm_lab_2/blob/5cb0855981afb0245c61ca32746066fd3d78f35f/algorithms/solution/Node.java#L86-L99
+
+> ### Использованные алгоритмы
+>
+>  ##### Создание отсортированного массива уникальных сжатых координат 
+>    https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/SecondAlgorithm.java#L47-L66
+>
+>  ##### Бинарный поиск
+> https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16ebefa9faf907c/algorithms/solution/Point.java#L14-L29
+
+### Замеры, графики и итоговые результаты
 
 
 ### Выводы
