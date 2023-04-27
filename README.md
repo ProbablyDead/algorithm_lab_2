@@ -33,9 +33,23 @@
 
 ### Алгоритм перебора
 
+ **Сложность:** подготовка - O(1), поиск - O(n)
+
+  Перебор каждого прямоугольника и определение принадлежности к нему точки
+
+  https://github.com/ProbablyDead/algorithm_lab_2/blob/d97afbfb6c46e2c8002b4b9d70ea0a808f26886c/algorithms/solution/FirstAlgorithm.java#L40-L43
+
+  > Определение принадлежности
+  https://github.com/ProbablyDead/algorithm_lab_2/blob/d97afbfb6c46e2c8002b4b9d70ea0a808f26886c/algorithms/solution/Rectangle.java#L29-L31
 
 ### Алгоритм на карте
 
 
 ### Алгоритм на дереве
+
+
+### Замеры и итоговые результаты
+
+
+### Выводы
 
