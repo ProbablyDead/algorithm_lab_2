@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Benchmark {
   private static final int maxNumber = 150000;
-  private static final int maxNumberForMap = 1000;
+  private static final int maxNumberForMap = 2000;
   private static final int startI = 1;
   private static final int step = 2;
 

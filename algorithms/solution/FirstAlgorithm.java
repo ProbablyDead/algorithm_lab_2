@@ -8,15 +8,18 @@ public class FirstAlgorithm {
 
   public static Pair<Long, Long> firstAlgorithmMain (Scanner scanner) {
 
+    long start = System.nanoTime();
+
     loadRectangles(scanner);
 
-    long start = System.nanoTime();
+    long finishedCreating = System.nanoTime() - start;
+    start = System.nanoTime();
    
     loadPoints(scanner);
 
     // System.out.println();
     scanner.close();
-    return new Pair<Long,Long>((long)0, System.nanoTime() - start);
+    return new Pair<Long,Long>(finishedCreating, System.nanoTime() - start);
   }
 
   private static void loadRectangles (Scanner scanner) {

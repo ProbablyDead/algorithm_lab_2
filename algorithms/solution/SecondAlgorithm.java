@@ -15,6 +15,7 @@ public class SecondAlgorithm {
     loadRectangles(scanner);
     createMap();
     long finishedCreating = System.nanoTime() - start;
+    start = System.nanoTime();
     loadNcheckPoints(scanner);
 
     scanner.close();

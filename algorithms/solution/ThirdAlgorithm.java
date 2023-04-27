@@ -20,6 +20,7 @@ public class ThirdAlgorithm {
     Node.updateWithSides(Rectangle.Side.sides);
 
     long finishedCreating = System.nanoTime() - start;
+    start = System.nanoTime();
 
     loadNcheckPoints(scanner);
     scanner.close();
