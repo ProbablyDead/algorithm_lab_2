@@ -130,6 +130,8 @@ https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16
   |65536| 72175333| 23443346541| 23515699000| ns.|
   |131072| 149201333| 167119576542| 167268896917| ns.|
 
+  > Для полного перебора я учитывал время считывания данных из строки, если не брать это в рассчет, то сложность будет O(1), тут получилась O(N) 
+
   #### [Построение карты](#алгоритм-на-карте)
 
   |Points and rectangles count|Build time|Request time|Total time|Units|
@@ -171,5 +173,20 @@ https://github.com/ProbablyDead/algorithm_lab_2/blob/8165bf9d053cef19ed174d3da16
 
   #### Графики
 
-###Выводы
+  > Ссылка на таблицу:  
+  > https://docs.google.com/spreadsheets/d/1cLYloIu1--4d1f-CxCaS-ZnmYWtM-1-gMPIbgMGErqY/edit#gid=0
+
+  - #### Построение структур
+
+  ![build](./results/buildTime.png)
+
+  - #### Получение результата
+
+  ![request](./results/requestTime.png)
+
+  - #### Общее время
+
+  ![total](./results/totalTime.png)
+
+### Выводы
 
