@@ -10,7 +10,17 @@
 
 ### Генерация данных
 
-https://github.com/ProbablyDead/algorithm_lab_2/blob/889240b6a7e1a8d307b48b8656a4ca4e40c3604e/benchmark/Benchmark.java#L11-L14
+  - Генерация прямоугольников 
+
+    **Формула:** `{[10*i, 10*i], [10*(2N-i), 10*(2N-i)]}`
+
+  https://github.com/ProbablyDead/algorithm_lab_2/blob/98546d58aee0075d551294138ed03db991e6d889/benchmark/Generator.java#L18-L24
+
+  - Генерация точек 
+    - Получение случайных чисел в заданном диапазоне
+
+    https://github.com/ProbablyDead/algorithm_lab_2/blob/98546d58aee0075d551294138ed03db991e6d889/benchmark/Generator.java#L42-L61
+
 
 ### Алгоритм перебора
 
